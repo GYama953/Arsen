@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-noir-background text-noir-text;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-noir-button text-noir-text px-6 py-3 rounded-sm border border-noir-gold/20 
+           shadow-premium hover:shadow-glow transition-all duration-300 
+           uppercase tracking-wider text-sm font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-noir-platinum px-6 py-3 rounded-sm border border-noir-platinum/30
+           hover:border-noir-platinum/60 transition-all duration-300
+           uppercase tracking-wider text-sm font-medium;
+  }
+  
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-medium mb-6 text-white;
+  }
+  
+  .section-subtitle {
+    @apply font-sans text-lg text-noir-platinum mb-12 max-w-2xl;
+  }
+  
+  .card {
+    @apply bg-noir-container p-8 rounded-sm shadow-premium border border-white/5 hover:border-noir-gold/20 
+           transition-all duration-300 hover:shadow-glow;
+  }
+  
+  .nav-link {
+    @apply text-noir-text hover:text-white transition-colors duration-200 uppercase tracking-wider text-sm;
+  }
+  
+  .active-nav-link {
+    @apply text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-noir-gold;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(196, 167, 125, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 167, 125, 0.5);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
